@@ -1,4 +1,4 @@
-# 🏙️ CitySense AI (formerly CityPulse)
+# 🏙️ CitySense AI 
 
 An AI-powered, hybrid Edge-to-Cloud smart city infrastructure monitoring system. CitySense AI uses Edge AI cameras (YOLOv8 + OpenCV) to automatically detect road hazards (potholes) and sanitary issues (overflowing garbage), clusters them intelligently to avoid duplication, and uses Google Gemini to generate proactive maintenance reports.
 
