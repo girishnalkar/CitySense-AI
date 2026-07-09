@@ -1,0 +1,15 @@
+node_modules/
+.env
+.DS_Store
+
+venv/
+public/data/mock_detections.json
+
+# Python Virtual Environments
+wsl_venv/
+venv/
+ai_export_env/
+
+# Ignore Python Cache
+__pycache__/
+*.pyc
