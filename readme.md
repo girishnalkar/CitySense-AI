@@ -2,13 +2,6 @@
 
 An AI-powered, hybrid Edge-to-Cloud smart city infrastructure monitoring system. CitySense AI uses Edge AI cameras (YOLOv8 + OpenCV) to automatically detect road hazards (potholes) and sanitary issues (overflowing garbage), clusters them intelligently to avoid duplication, and uses Google Gemini to generate proactive maintenance reports.
 
-[![Production Status](https://img.shields.io/badge/Status-🟢%20Active-brightgreen)](#-live-deployments)
-[![GitHub License](https://img.shields.io/github/license/girishnalkar/CitySense-AI)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/girishnalkar/CitySense-AI)](https://github.com/girishnalkar/CitySense-AI/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/girishnalkar/CitySense-AI)](https://github.com/girishnalkar/CitySense-AI/network/members)
-
----
-
 ## 🌐 Live Deployments
 
 *   **Live Web App (Frontend):** [city-pulse-ivory-kappa.vercel.app](https://city-pulse-ivory-kappa.vercel.app/)
@@ -19,9 +12,6 @@ An AI-powered, hybrid Edge-to-Cloud smart city infrastructure monitoring system.
 ---
 
 ## 🏗️ System Architecture
-
-CitySense AI leverages a distributed architectural flow connecting the Edge, the Cloud, and the Citizen:
-
 ```mermaid
 graph TD
     subgraph Edge AI Streamer (Python & YOLOv8)
@@ -49,11 +39,9 @@ graph TD
     end
 ```
 
----
-
 ## 🚀 Key Features
 
-*   **📷 Real-Time Edge AI Detection:** Simulates dashcams and static CCTV cameras using YOLOv8 models ([pothole_best.pt](file:///c:/Users/SAURABH07/OneDrive/Desktop/Girish_projects/CityPulse-master/pothole_best.pt) and [garbage_best.pt](file:///c:/Users/SAURABH07/OneDrive/Desktop/Girish_projects/CityPulse-master/garbage_best.pt)) to detect road irregularities and waste build-up.
+*   **📷 Real-Time Edge AI Detection:** Simulates dashcams and static CCTV cameras using YOLOv8 models ([pothole_best.pt] and [garbage_best.pt] to detect road irregularities and waste build-up.
 *   **📍 Intelligent Clustering (10m Radius):** Group nearby reported incidents automatically in the database, avoiding redundant report cluttering while dynamically escalating severity levels as more sightings are reported.
 *   **🧠 Proactive Maintenance (Gemini AI):** An autonomous reporting pipeline fetches active clusters, prepares structured prompts, and queries Gemini 2.5 Flash to synthesize urgent bullet-point work plans.
 *   **📟 Silent Failure Detection (Anomaly Engine):** Monitors device heartbeats (e.g. CCTV feeds, smart streetlights) and flags anomalies using an exponential failure probability model when heartbeats are missed.
