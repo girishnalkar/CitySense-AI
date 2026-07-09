@@ -11,34 +11,6 @@ An AI-powered, hybrid Edge-to-Cloud smart city infrastructure monitoring system.
 
 ---
 
-## 🏗️ System Architecture
-```mermaid
-graph TD
-    subgraph Edge AI Streamer (Python & YOLOv8)
-        C1[Camera 1: Road Patrol] -->|YOLOv8 Detection| FE[Flask Multi-Stream Server :5001]
-        C2[Camera 2: Pothole Cam] -->|YOLOv8 Detection| FE
-        C3[Camera 3: Trash Cam A] -->|YOLOv8 Detection| FE
-        C4[Camera 4: Trash Cam B] -->|YOLOv8 Detection| FE
-    end
-
-    subgraph User & Citizen Input
-        CA[Citizen Portal] -->|Report Issue / Upload Photo| BE
-    end
-
-    FE -->|JSON Ingestion /api/detections| BE[Express Node.js Backend :5000]
-    
-    subgraph Cloud & AI Layer
-        BE -->|Store / Retrieve| DB[(MongoDB Atlas)]
-        BE -->|Aggregated Context| GEMINI[Google Gemini 2.5 Flash]
-        GEMINI -->|Proactive Recommendations| BE
-    end
-
-    subgraph Command Center (React & Leaflet)
-        BE -->|REST API| CP[React Admin Dashboard]
-        CP -->|Real-Time Heatmap| Eng[City Engineers]
-    end
-```
-
 ## 🚀 Key Features
 
 *   **📷 Real-Time Edge AI Detection:** Simulates dashcams and static CCTV cameras using YOLOv8 models ([pothole_best.pt] and [garbage_best.pt] to detect road irregularities and waste build-up.
